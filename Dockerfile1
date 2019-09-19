@@ -1,0 +1,5 @@
+FROM myfiglet:latest
+RUN apt-get update -y
+COPY awslogs-agent-setup.py /var/www/html/ 
+RUN apt-get install figlet -y
+ENTRYPOINT ["figlet", "-f", "script","Hello"]

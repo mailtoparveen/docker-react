@@ -1,0 +1,11 @@
+version: '2'
+services:
+  redis-server: 
+    image: 'redis'
+    volumes:
+      - /app/node_modules
+      - .:/app
+  node-app:
+    build: .
+    ports:
+      - "8081:8081"
